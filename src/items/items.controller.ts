@@ -11,4 +11,9 @@ export class ItemsController {
     async findAll(): Promise<Items>{
         return this.itemsService.findAll();
     }
+
+    @Get(':id')
+    async find(@Param('id') id: number): Promise<Item> {
+        return this.itemsService.find(id);
+    }
 }
