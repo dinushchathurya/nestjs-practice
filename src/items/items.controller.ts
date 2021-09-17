@@ -16,4 +16,9 @@ export class ItemsController {
     async find(@Param('id') id: number): Promise<Item> {
         return this.itemsService.find(id);
     }
+
+    @Post()
+    async create(@Body('item') item: Item): Promise<void> {
+        this.itemsService.create(item);
+    }
 }
