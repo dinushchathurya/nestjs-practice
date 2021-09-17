@@ -21,4 +21,14 @@ export class ItemsController {
     async create(@Body('item') item: Item): Promise<void> {
         this.itemsService.create(item);
     }
+
+    @Put()
+    async update(@Body('item') item: Item): Promise<void> {
+        this.itemsService.update(item);
+    }
+
+    @Delete(':id')
+    async delete(@Param('id') id: number): Promise<void> {
+        this.itemsService.delete(id);
+    }
 }
